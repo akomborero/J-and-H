@@ -5,7 +5,12 @@ import { DataStoreProvider } from "./context/DataStoreContext";
 import { ProtectedRoute } from "./routes/ProtectedRoute";
 import { DashboardLayout } from "./components/layout/DashboardLayout";
 
+import { PublicLayout } from "./components/marketing/PublicLayout";
 import { LandingPage } from "./pages/public/LandingPage";
+import { ServicesPage } from "./pages/public/ServicesPage";
+import { AboutPage } from "./pages/public/AboutPage";
+import { CompliancePage } from "./pages/public/CompliancePage";
+import { ContactPage } from "./pages/public/ContactPage";
 import { LoginPage } from "./pages/auth/LoginPage";
 import { RegisterPage } from "./pages/auth/RegisterPage";
 
@@ -45,7 +50,13 @@ function App() {
         <DataStoreProvider>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<LandingPage />} />
+              <Route element={<PublicLayout />}>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/compliance" element={<CompliancePage />} />
+                <Route path="/contact" element={<ContactPage />} />
+              </Route>
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
 
