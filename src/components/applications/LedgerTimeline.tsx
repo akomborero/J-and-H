@@ -50,7 +50,7 @@ export function LedgerTimeline({ currentStatus, events }: LedgerTimelineProps) {
                   "relative flex h-10 w-10 items-center justify-center rounded-full border-2 shadow-sm",
                   reached
                     ? "border-ochre bg-ochre text-ink"
-                    : "border-ink/15 bg-white text-ink-soft/40 dark:border-white/15 dark:bg-[#1a1f1b]"
+                    : "border-ink/15 bg-white text-ink-soft/40 dark:border-white/15 dark:bg-[#141b2e]"
                 )}
               >
                 {isCurrent && (
@@ -97,7 +97,7 @@ export function LedgerTimeline({ currentStatus, events }: LedgerTimelineProps) {
               initial={{ scale: 0, rotate: -25 }}
               animate={{ scale: 1, rotate: 0 }}
               transition={{ delay: 0.5 + i * 0.06, type: "spring", stiffness: 300, damping: 14 }}
-              className="absolute -left-[31px] flex h-6 w-6 items-center justify-center rounded-full bg-forest shadow-[0_0_0_3px_var(--color-paper)] dark:shadow-[0_0_0_3px_#0c0f0d]"
+              className="absolute -left-[31px] flex h-6 w-6 items-center justify-center rounded-full bg-forest shadow-[0_0_0_3px_var(--color-paper)] dark:shadow-[0_0_0_3px_#070b14]"
             >
               <div className="h-2 w-2 rounded-full bg-ochre-light" />
             </motion.div>

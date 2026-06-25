@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Send, CheckCircle2 } from "lucide-react";
 
 function FacebookIcon() {
   return (
@@ -62,9 +63,60 @@ const COMPANY_LINKS = [
 ];
 
 export function PublicFooter() {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    setSubscribed(true);
+  };
+
   return (
-    <footer className="bg-forest-dark text-paper/85">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <footer className="relative overflow-hidden bg-forest-dark text-paper/85">
+      {/* Decorative gradient mesh */}
+      <div className="pointer-events-none absolute inset-0 opacity-40">
+        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-forest-light/30 blur-3xl" />
+        <div className="absolute -right-24 top-1/3 h-80 w-80 rounded-full bg-ochre/10 blur-3xl" />
+      </div>
+
+      {/* Newsletter strip */}
+      <div className="relative border-b border-paper/10">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="glass-dark flex flex-col items-center justify-between gap-5 rounded-2xl border-paper/10 p-6 sm:flex-row sm:p-8">
+            <div className="text-center sm:text-left">
+              <h3 className="font-display text-lg font-medium text-paper">Stay ahead of every deadline</h3>
+              <p className="mt-1 text-sm text-paper/60">
+                Compliance reminders, tax season updates, and new service announcements — no spam.
+              </p>
+            </div>
+            {subscribed ? (
+              <span className="flex items-center gap-2 whitespace-nowrap text-sm font-medium text-ochre-light">
+                <CheckCircle2 className="h-4 w-4" /> You're subscribed
+              </span>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex w-full max-w-sm gap-2">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@company.co.zw"
+                  className="h-11 flex-1 rounded-lg border border-paper/20 bg-white/5 px-3.5 text-sm text-paper placeholder:text-paper/40 outline-none transition-colors focus:border-ochre-light/50"
+                />
+                <button
+                  type="submit"
+                  className="flex h-11 items-center gap-1.5 whitespace-nowrap rounded-lg bg-ochre px-4 text-sm font-medium text-ink shadow-glow transition-all hover:-translate-y-0.5 hover:brightness-105"
+                >
+                  Subscribe <Send className="h-3.5 w-3.5" />
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1.2fr_1fr_1fr]">
           <div>
             <Link to="/" className="flex items-center gap-2.5">
@@ -86,7 +138,7 @@ export function PublicFooter() {
                   key={i}
                   href="#"
                   aria-label="Social link"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-paper/20 text-paper/70 transition-colors hover:border-ochre-light hover:text-ochre-light"
+                  className="glass-dark flex h-9 w-9 items-center justify-center rounded-full border-paper/15 text-paper/70 transition-all hover:-translate-y-0.5 hover:border-ochre-light/40 hover:text-ochre-light"
                 >
                   <Icon />
                 </a>
@@ -139,7 +191,7 @@ export function PublicFooter() {
         </div>
       </div>
 
-      <div className="border-t border-paper/10">
+      <div className="relative border-t border-paper/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs text-paper/50 sm:flex-row sm:px-6 lg:px-8">
           <p>&copy; {new Date().getFullYear()} J&amp;H Consultancy Services. All rights reserved.</p>
           <div className="flex gap-4">

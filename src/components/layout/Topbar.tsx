@@ -20,7 +20,7 @@ export function Topbar({ onMenuClick }: { onMenuClick: () => void }) {
   const unreadCount = myNotifications.filter((n) => !n.read).length;
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-ink/8 bg-white/80 px-4 backdrop-blur-md dark:border-white/8 dark:bg-[#0f1310]/80 lg:px-6">
+    <header className="glass-nav sticky top-0 z-30 flex h-16 items-center justify-between border-b border-ink/8 px-4 dark:border-white/8 lg:px-6">
       <button
         onClick={onMenuClick}
         className="rounded-md p-2 text-ink-soft hover:bg-ink/5 dark:text-paper/70 dark:hover:bg-white/5 lg:hidden"
@@ -59,7 +59,7 @@ export function Topbar({ onMenuClick }: { onMenuClick: () => void }) {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -6, scale: 0.97 }}
                 transition={{ duration: 0.15 }}
-                className="absolute right-0 mt-2 w-80 overflow-hidden rounded-xl border border-ink/8 bg-white shadow-elevated dark:border-white/10 dark:bg-[#141815]"
+                className="glass absolute right-0 mt-2 w-80 overflow-hidden rounded-xl border-ink/8 shadow-elevated dark:border-white/10"
               >
                 <div className="border-b border-ink/8 px-4 py-3 dark:border-white/8">
                   <p className="text-sm font-semibold text-ink dark:text-paper">Notifications</p>
@@ -109,7 +109,7 @@ export function Topbar({ onMenuClick }: { onMenuClick: () => void }) {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -6, scale: 0.97 }}
                 transition={{ duration: 0.15 }}
-                className="absolute right-0 mt-2 w-56 overflow-hidden rounded-xl border border-ink/8 bg-white shadow-elevated dark:border-white/10 dark:bg-[#141815]"
+                className="glass absolute right-0 mt-2 w-56 overflow-hidden rounded-xl border-ink/8 shadow-elevated dark:border-white/10"
               >
                 <div className="border-b border-ink/8 px-4 py-3 dark:border-white/8">
                   <p className="text-sm font-medium text-ink dark:text-paper">{user.fullName}</p>

@@ -3,16 +3,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-150 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ochre focus-visible:ring-offset-2 ring-offset-paper dark:ring-offset-[#0c0f0d]",
+  "relative inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 ease-out disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ochre focus-visible:ring-offset-2 ring-offset-paper dark:ring-offset-[#070b14] active:scale-[0.98]",
   {
     variants: {
       variant: {
-        default: "bg-forest text-paper hover:bg-forest-light shadow-sm",
-        ochre: "bg-ochre text-ink hover:bg-ochre-dark shadow-sm",
+        default: "bg-forest text-paper shadow-soft hover:bg-forest-light hover:shadow-elevated hover:-translate-y-0.5",
+        ochre: "bg-gradient-to-b from-ochre-light to-ochre text-ink shadow-soft hover:shadow-elevated hover:-translate-y-0.5 hover:brightness-105",
         outline:
-          "border border-ink/15 bg-transparent text-ink hover:bg-ink/5 dark:border-white/15 dark:text-paper dark:hover:bg-white/5",
-        ghost: "hover:bg-ink/5 text-ink dark:text-paper dark:hover:bg-white/10",
-        destructive: "bg-status-danger text-paper hover:opacity-90",
+          "border border-ink/15 bg-transparent text-ink hover:border-forest/40 hover:bg-forest/5 hover:-translate-y-0.5 dark:border-white/15 dark:text-paper dark:hover:border-ochre-light/30 dark:hover:bg-white/5",
+        ghost: "text-ink hover:bg-ink/5 dark:text-paper dark:hover:bg-white/10",
+        destructive: "bg-status-danger text-paper hover:opacity-90 hover:-translate-y-0.5",
         link: "text-forest underline-offset-4 hover:underline dark:text-ochre-light p-0 h-auto",
       },
       size: {

@@ -17,7 +17,7 @@ export function Sidebar({ role, mobileOpen, onClose }: { role: UserRole; mobileO
       )}
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r border-ink/8 bg-white transition-transform duration-300 dark:border-white/8 dark:bg-[#0f1310] lg:translate-x-0",
+          "fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r border-ink/8 bg-white transition-transform duration-300 dark:border-white/8 dark:bg-[#0a0f1c] lg:translate-x-0",
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >

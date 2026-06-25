@@ -59,8 +59,8 @@ export function SuperAdminDashboardPage() {
                 <AreaChart data={revenueTrend} margin={{ left: -20 }}>
                   <defs>
                     <linearGradient id="revGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#C89B3C" stopOpacity={0.35} />
-                      <stop offset="100%" stopColor="#C89B3C" stopOpacity={0} />
+                      <stop offset="0%" stopColor="#C9974A" stopOpacity={0.35} />
+                      <stop offset="100%" stopColor="#C9974A" stopOpacity={0} />
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="currentColor" className="text-ink/5" vertical={false} />
@@ -70,7 +70,7 @@ export function SuperAdminDashboardPage() {
                     formatter={(value?: number | string | readonly (number | string)[]) => [formatCurrency(Number(Array.isArray(value) ? value[0] : value ?? 0)), "Revenue"]}
                     contentStyle={{ borderRadius: 8, border: "1px solid rgba(21,23,20,0.1)", fontSize: 13 }}
                   />
-                  <Area type="monotone" dataKey="revenue" stroke="#0F3D2E" strokeWidth={2} fill="url(#revGradient)" />
+                  <Area type="monotone" dataKey="revenue" stroke="#0F2A52" strokeWidth={2} fill="url(#revGradient)" />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
@@ -103,7 +103,7 @@ export function SuperAdminDashboardPage() {
                 <XAxis dataKey="name" tick={{ fontSize: 11 }} axisLine={false} tickLine={false} />
                 <YAxis tick={{ fontSize: 12 }} axisLine={false} tickLine={false} allowDecimals={false} />
                 <Tooltip contentStyle={{ borderRadius: 8, border: "1px solid rgba(21,23,20,0.1)", fontSize: 13 }} />
-                <Bar dataKey="count" fill="#0F3D2E" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="count" fill="#0F2A52" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>

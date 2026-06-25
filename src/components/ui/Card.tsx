@@ -1,11 +1,22 @@
 import { type HTMLAttributes } from "react";
 import { cn } from "../../lib/utils";
 
-export function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
+export interface CardProps extends HTMLAttributes<HTMLDivElement> {
+  /** Apply a frosted glassmorphism treatment instead of the solid surface. */
+  glass?: boolean;
+  /** Lift and deepen shadow on hover — for clickable/interactive cards. */
+  interactive?: boolean;
+}
+
+export function Card({ className, glass, interactive, ...props }: CardProps) {
   return (
     <div
       className={cn(
-        "rounded-card border border-ink/8 bg-white shadow-soft dark:border-white/8 dark:bg-[#141815]",
+        "rounded-card border transition-all duration-300",
+        glass
+          ? "glass"
+          : "border-ink/8 bg-white shadow-soft dark:border-white/8 dark:bg-[#0e1525]",
+        interactive && "hover:-translate-y-1 hover:shadow-elevated cursor-pointer",
         className
       )}
       {...props}
