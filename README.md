@@ -40,7 +40,7 @@ any of these emails (any password works):
 |---|---|
 | Client | `tendai.moyo@example.com` |
 | Admin | `farai@jhconsultancy.co.zw` |
-| Super Admin | `hilary@jhconsultancy.co.zw` |     brto
+| Super Admin | `hilary@jhconsultancy.co.zw` |    
 
 ## Scripts
 
