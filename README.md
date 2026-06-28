@@ -40,9 +40,11 @@ any of these emails (any password works):
 |---|---|
 | Client | `tendai.moyo@example.com` |
 | Admin | `farai@jhconsultancy.co.zw` |
-| Super Admin | `hilary@jhconsultancy.co.zw` |
+| Super Admin | `hilary@jhconsultancy.co.zw` |     brto
 
 ## Scripts
+
+
 
 - `npm run dev` — start the dev server
 - `npm run build` — type-check and build for production (`dist/`)
